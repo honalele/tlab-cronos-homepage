@@ -85,72 +85,197 @@ export default function Home() {
       </section>
 
       {/* Project Objectives Section */}
-      <section id="objectives" className="max-w-3xl mx-auto py-12 px-4">
-        <h2 className="font-serif text-xl md:text-2xl font-bold mb-4 uppercase tracking-widest border-b border-gray-200 pb-2">Project Objectives</h2>
-        <ol className="list-decimal pl-6 text-gray-800 space-y-4">
-          <li><span className="font-semibold">Build an interoperability platform</span> for heterogeneous communication messages using foundational models</li>
-          <li><span className="font-semibold">Optimize bidirectional interaction</span> between humans and Embodied AI</li>
-          <li><span className="font-semibold">Develop an adaptive communication platform</span> that evolves to accommodate diversity</li>
-          <li><span className="font-semibold">Demonstrate a communication platform</span> for human-Embodied AI co-creative transportation system</li>
-        </ol>
-      </section>
-
-      {/* Symposium Details */}
-      <section id="symposium" className="bg-white py-16 px-4 border-t border-b border-gray-200">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="font-serif text-xl md:text-2xl font-bold mb-4 uppercase tracking-widest border-b border-gray-200 pb-2">Symposium</h2>
-          <div className="mb-4 text-gray-700">
-            <span className="font-semibold">Date & Location:</span> 2025/5/12
+      <section id="objectives" className="bg-gradient-to-b from-gray-50 to-white py-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 uppercase tracking-widest">Project Objectives</h2>
+            <div className="w-24 h-1 bg-gray-900 mx-auto"></div>
           </div>
-          <div className="mb-8">
-            <h3 className="font-serif text-lg font-bold mb-2">プログラム</h3>
-            <ul className="space-y-2 text-gray-800">
-              <li>14:00-14:30　CRONOSプロジェクトと活動紹介（塚田）</li>
-              <li>14:30-15:20　五十嵐先生、中山先生、馬先生、</li>
-              <li>15:20-15:30　（休憩）</li>
-              <li>15:30-16:45　研究紹介１（CRONOSプロジェクトの進捗）Hao Si</li>
-              <li>15:45-17:00　研究紹介２</li>
-              <li>15:00-17:15　研究紹介３</li>
-              <li>15:30-16:00　評価環境：CVPRチャレンジの取り組みとCRONOSリーダーボード開発</li>
-              <ul className="ml-6 list-disc text-sm text-gray-700">
-                <li>チャレンジ１：TUMTraf V2X Cooperative Perception Dataset (CVPR&apos;24) <a href="https://coop-intelligence.github.io/" className="underline text-gray-900" target="_blank" rel="noopener noreferrer">https://coop-intelligence.github.io/</a></li>
-                <li>チャレンジ２：End-to-End Autonomous Driving through V2X Cooperation （Track1: Temporal Perception）<a href="https://coop-intelligence.github.io/V2X-Sec_MEIS/#Perception-track" className="underline text-gray-900" target="_blank" rel="noopener noreferrer">https://coop-intelligence.github.io/V2X-Sec_MEIS/#Perception-track</a></li>
-                <li>チャレンジ３：End-to-End Autonomous Driving through V2X Cooperation （Track1: Temporal Perception）<a href="https://coop-intelligence.github.io/V2X-Sec_MEIS/#E2E-track" className="underline text-gray-900" target="_blank" rel="noopener noreferrer">https://coop-intelligence.github.io/V2X-Sec_MEIS/#E2E-track</a></li>
-              </ul>
-              <li>16:00-17:00　ディスカッション＋ポスターセッション</li>
-            </ul>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Objective 1 */}
+            <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white font-bold text-xl">1</div>
+                <div>
+                  <h3 className="font-serif text-lg font-bold mb-2 text-gray-900">Build an Interoperability Platform</h3>
+                  <p className="text-gray-700">Develop a robust platform for heterogeneous communication messages using foundational models</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Objective 2 */}
+            <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white font-bold text-xl">2</div>
+                <div>
+                  <h3 className="font-serif text-lg font-bold mb-2 text-gray-900">Optimize Bidirectional Interaction</h3>
+                  <p className="text-gray-700">Enhance the interaction between humans and Embodied AI for seamless communication</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Objective 3 */}
+            <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white font-bold text-xl">3</div>
+                <div>
+                  <h3 className="font-serif text-lg font-bold mb-2 text-gray-900">Develop Adaptive Platform</h3>
+                  <p className="text-gray-700">Create a communication platform that evolves to accommodate diverse needs and scenarios</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Objective 4 */}
+            <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white font-bold text-xl">4</div>
+                <div>
+                  <h3 className="font-serif text-lg font-bold mb-2 text-gray-900">Demonstrate Co-Creative System</h3>
+                  <p className="text-gray-700">Showcase a communication platform for human-Embodied AI co-creative transportation system</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Key Features */}
+          <div className="mt-12 bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+            <h3 className="font-serif text-xl font-bold mb-6 text-center text-gray-900">Key Features</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="text-center">
+                <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-2">Trustworthy</h4>
+                <p className="text-sm text-gray-700">Secure and reliable communication framework</p>
+              </div>
+              <div className="text-center">
+                <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                  </svg>
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-2">Scalable</h4>
+                <p className="text-sm text-gray-700">Adaptable to growing demands and complexity</p>
+              </div>
+              <div className="text-center">
+                <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-2">Intelligent</h4>
+                <p className="text-sm text-gray-700">Advanced AI-driven communication systems</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Participants */}
-      <section id="participants" className="max-w-3xl mx-auto py-16 px-4">
-        <h2 className="font-serif text-xl md:text-2xl font-bold mb-4 uppercase tracking-widest border-b border-gray-200 pb-2">Participants</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          <div>
-            <h3 className="font-semibold text-base mb-2">Featured Researchers</h3>
-            <ul className="list-disc pl-6 text-gray-700">
-              <li>Takuro Yonezawa</li>
-              <li>Akira Kanaoka</li>
-              <li>Takayuki Aoki</li>
-              <li>Manabu Tsukada</li>
-            </ul>
+      {/* Symposium Details */}
+      <section id="symposium" className="bg-gradient-to-b from-white to-gray-50 py-20 px-4 border-t border-b border-gray-200">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 uppercase tracking-widest">Symposium</h2>
+            <div className="w-24 h-1 bg-gray-900 mx-auto"></div>
           </div>
-          <div>
-            <h3 className="font-semibold text-base mb-2">Academic Institutions</h3>
-            <ul className="list-disc pl-6 text-gray-700">
-              <li>Nagoya University</li>
-              <li>Toho University</li>
-              <li>Kadinche Co.</li>
-              <li>Tokyo University</li>
-            </ul>
+          
+          {/* Time and Place */}
+          <div className="bg-white rounded-lg shadow-lg p-8 mb-8 border border-gray-100">
+            <h3 className="font-serif text-xl font-bold mb-6 text-center text-gray-900">Time and Place</h3>
+            <div className="space-y-4 text-gray-800">
+              <div className="flex items-center justify-center gap-2 text-lg">
+                <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <p className="font-semibold">Monday, May 12 ⋅ 14:00 – 17:00</p>
+              </div>
+              <div className="flex items-center justify-center gap-2">
+                <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <p>I-REF Building 6F Hilloby</p>
+              </div>
+              <div className="flex items-center justify-center gap-2">
+                <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+                <a href="https://u-tokyo-ac-jp.zoom.us/j/88423110189?pwd=q1R7lklBcj2rYhoSVRjUYpmMlBVvIN.1" 
+                   className="text-blue-600 hover:underline" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                  Join via Zoom
+                </a>
+              </div>
+            </div>
           </div>
-          <div>
-            <h3 className="font-semibold text-base mb-2">Industry Partners</h3>
-            <ul className="list-disc pl-6 text-gray-700">
-              <li>Industry Partner A</li>
-              <li>Industry Partner B</li>
-            </ul>
+
+          {/* Program */}
+          <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+            <h3 className="font-serif text-xl font-bold mb-6 text-center text-gray-900">Program</h3>
+            <div className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-24 text-sm font-semibold text-gray-600">14:00-14:30</div>
+                    <div className="text-gray-800">CRONOS Project and activity sharing (Tsukada)</div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-24 text-sm font-semibold text-gray-600">14:30-15:20</div>
+                    <div className="text-gray-800">Research introduction by Prof. Igarashi, Prof. Nakayama, and Prof. Ma</div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-24 text-sm font-semibold text-gray-600">15:20-15:30</div>
+                    <div className="text-gray-800">（Break）</div>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-24 text-sm font-semibold text-gray-600">15:30-15:45</div>
+                    <div className="text-gray-800">Research introduction (Progressive Heterogeneous Collaborative Perception)</div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-24 text-sm font-semibold text-gray-600">15:45-16:15</div>
+                    <div className="text-gray-800">Evaluation platform (CVPR Challenge overview and competition)</div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-24 text-sm font-semibold text-gray-600">16:15-17:00</div>
+                    <div className="text-gray-800">Discussion + poster session</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Challenges */}
+              <div className="mt-8 pt-6 border-t border-gray-100">
+                <h4 className="font-semibold text-gray-900 mb-4">CVPR Challenges</h4>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <a href="https://coop-intelligence.github.io/" 
+                     className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors" 
+                     target="_blank" 
+                     rel="noopener noreferrer">
+                    <h5 className="font-semibold text-gray-900 mb-2">Challenge 1</h5>
+                    <p className="text-sm text-gray-700">TUMTraf V2X Cooperative Perception Dataset (CVPR&apos;24)</p>
+                  </a>
+                  <a href="https://coop-intelligence.github.io/V2X-Sec_MEIS/#Perception-track" 
+                     className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors" 
+                     target="_blank" 
+                     rel="noopener noreferrer">
+                    <h5 className="font-semibold text-gray-900 mb-2">Challenge 2</h5>
+                    <p className="text-sm text-gray-700">End-to-End Autonomous Driving through V2X Cooperation (Track1: Temporal Perception)</p>
+                  </a>
+                  <a href="https://coop-intelligence.github.io/V2X-Sec_MEIS/#E2E-track" 
+                     className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors" 
+                     target="_blank" 
+                     rel="noopener noreferrer">
+                    <h5 className="font-semibold text-gray-900 mb-2">Challenge 3</h5>
+                    <p className="text-sm text-gray-700">End-to-End Autonomous Driving through V2X Cooperation (Track2: E2E-AD)</p>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
