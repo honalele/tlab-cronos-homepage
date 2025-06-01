@@ -3,9 +3,139 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
+// Language content
+const content = {
+  en: {
+    nav: {
+      about: "About",
+      symposium: "Symposium",
+      research: "Research",
+      participants: "Participants",
+      posters: "Posters",
+      resources: "Resources",
+      contact: "Contact"
+    },
+    hero: {
+      title: "Evolutionary communication infrastructure connecting diverse mobile devices and humans",
+      subtitle: "JST funded research on integrated V2V/V2X communication systems with LLMs and VR simulation technologies",
+      register: "Register",
+      learnMore: "Learn More"
+    },
+    about: {
+      title: "About the CRONOS Project",
+      description: "The CRONOS Project aims to develop an advanced communication platform connecting diverse mobile entities and humans. Our research focuses on integrating V2V/V2X systems, Large Language Models, and VR simulation technologies to enable seamless, secure, and human-centered interactions in next-generation mobility environments.",
+      objectives: [
+        "Key objectives: Trustworthy, scalable, and intelligent communication frameworks",
+        "Research focus: V2V/V2X, LLMs, VR, Human-Embodied AI"
+      ]
+    },
+    objectives: {
+      title: "Project Objectives",
+      items: [
+        {
+          title: "Build an Interoperability Platform",
+          description: "Develop a robust platform for heterogeneous communication messages using foundational models"
+        },
+        {
+          title: "Optimize Bidirectional Interaction",
+          description: "Enhance the interaction between humans and Embodied AI for seamless communication"
+        },
+        {
+          title: "Develop Adaptive Platform",
+          description: "Create a communication platform that evolves to accommodate diverse needs and scenarios"
+        },
+        {
+          title: "Demonstrate Co-Creative System",
+          description: "Showcase a communication platform for human-Embodied AI co-creative transportation system"
+        }
+      ],
+      features: {
+        title: "Key Features",
+        items: [
+          {
+            title: "Trustworthy",
+            description: "Secure and reliable communication framework"
+          },
+          {
+            title: "Scalable",
+            description: "Adaptable to growing demands and complexity"
+          },
+          {
+            title: "Intelligent",
+            description: "Advanced AI-driven communication systems"
+          }
+        ]
+      }
+    }
+  },
+  ja: {
+    nav: {
+      about: "概要",
+      symposium: "シンポジウム",
+      research: "研究",
+      participants: "参加者",
+      posters: "ポスター",
+      resources: "リソース",
+      contact: "お問い合わせ"
+    },
+    hero: {
+      title: "多様な移動体と人間を繋ぐ進化型コミュニケーション基盤",
+      subtitle: "JST funded research on integrated V2V/V2X communication systems with LLMs and VR simulation technologies",
+      register: "登録",
+      learnMore: "詳細"
+    },
+    about: {
+      title: "CRONOSプロジェクトについて",
+      description: "CRONOSプロジェクトは、多様な移動体と人間を繋ぐ先進的なコミュニケーションプラットフォームの開発を目指しています。私たちの研究は、V2V/V2Xシステム、大規模言語モデル、VRシミュレーション技術を統合し、次世代のモビリティ環境におけるシームレスで安全な、人間中心のインタラクションを実現することに焦点を当てています。",
+      objectives: [
+        "主要目標：信頼性が高く、スケーラブルで、インテリジェントなコミュニケーションフレームワーク",
+        "研究焦点：V2V/V2X、LLM、VR、人間-移動体AI"
+      ]
+    },
+    objectives: {
+      title: "プロジェクト目標",
+      items: [
+        {
+          title: "相互運用性プラットフォームの構築",
+          description: "基盤モデルを使用した異種通信メッセージのための堅牢なプラットフォームの開発"
+        },
+        {
+          title: "双方向インタラクションの最適化",
+          description: "人間と移動体AIの間のシームレスなコミュニケーションのためのインタラクションの強化"
+        },
+        {
+          title: "適応型プラットフォームの開発",
+          description: "多様なニーズとシナリオに対応する進化するコミュニケーションプラットフォームの作成"
+        },
+        {
+          title: "共創システムの実証",
+          description: "人間-移動体AI共創型交通システムのためのコミュニケーションプラットフォームの展示"
+        }
+      ],
+      features: {
+        title: "主要機能",
+        items: [
+          {
+            title: "信頼性",
+            description: "安全で信頼性の高いコミュニケーションフレームワーク"
+          },
+          {
+            title: "スケーラビリティ",
+            description: "成長する需要と複雑性に対応可能"
+          },
+          {
+            title: "インテリジェンス",
+            description: "先進的なAI駆動型コミュニケーションシステム"
+          }
+        ]
+      }
+    }
+  }
+};
+
 export default function Home() {
-  // Language toggle state (simple demo, not i18n)
   const [lang, setLang] = useState<'ja' | 'en'>('ja');
+  const t = content[lang];
 
   return (
     <div className="flex flex-col min-h-screen bg-white font-sans text-gray-900">
@@ -17,13 +147,13 @@ export default function Home() {
             <span className="font-serif text-3xl md:text-4xl font-bold tracking-wide text-center">CRONOS Project</span>
           </div>
           <nav className="mt-6 flex gap-8 text-xs md:text-sm tracking-widest uppercase text-gray-700 font-medium">
-            <a href="#about" className="hover:underline underline-offset-4">About</a>
-            <a href="#symposium" className="hover:underline underline-offset-4">Symposium</a>
-            <a href="#research" className="hover:underline underline-offset-4">Research</a>
-            <a href="#participants" className="hover:underline underline-offset-4">Participants</a>
-            <a href="#posters" className="hover:underline underline-offset-4">Posters</a>
-            <a href="#resources" className="hover:underline underline-offset-4">Resources</a>
-            <a href="#contact" className="hover:underline underline-offset-4">Contact</a>
+            <a href="#about" className="hover:underline underline-offset-4">{t.nav.about}</a>
+            <a href="#symposium" className="hover:underline underline-offset-4">{t.nav.symposium}</a>
+            <a href="#research" className="hover:underline underline-offset-4">{t.nav.research}</a>
+            <a href="#participants" className="hover:underline underline-offset-4">{t.nav.participants}</a>
+            <a href="#posters" className="hover:underline underline-offset-4">{t.nav.posters}</a>
+            <a href="#resources" className="hover:underline underline-offset-4">{t.nav.resources}</a>
+            <a href="#contact" className="hover:underline underline-offset-4">{t.nav.contact}</a>
           </nav>
           <div className="flex items-center gap-2 mt-4">
             <button
@@ -58,25 +188,35 @@ export default function Home() {
             <line x1="750" y1="10" x2="50" y2="290" />
           </g>
         </svg>
-        <h1 className="font-serif text-2xl md:text-4xl font-bold mb-4 z-10">多様な移動体と人間を繋ぐ進化型コミュニケーション基盤</h1>
+        <h1 className="font-serif text-2xl md:text-4xl font-bold mb-4 z-10 max-w-4xl leading-tight">
+          {lang === 'en' ? (
+            <>
+              <span className="block">Evolutionary communication infrastructure</span>
+              <span className="block">connecting diverse mobile devices and humans</span>
+            </>
+          ) : (
+            t.hero.title
+          )}
+        </h1>
         <p className="text-base md:text-lg text-gray-700 mb-8 max-w-2xl mx-auto z-10">
-          JST funded research on integrated V2V/V2X communication systems with LLMs and VR simulation technologies
+          {t.hero.subtitle}
         </p>
         <div className="flex gap-4 justify-center z-10">
-          <a href="#register" className="px-6 py-2 border border-gray-900 text-gray-900 rounded-full font-medium tracking-wider hover:bg-gray-900 hover:text-white transition">Register</a>
-          <a href="#about" className="px-6 py-2 border border-gray-400 text-gray-700 rounded-full font-medium tracking-wider hover:bg-gray-100 transition">Learn More</a>
+          <a href="#register" className="px-6 py-2 border border-gray-900 text-gray-900 rounded-full font-medium tracking-wider hover:bg-gray-900 hover:text-white transition">{t.hero.register}</a>
+          <a href="#about" className="px-6 py-2 border border-gray-400 text-gray-700 rounded-full font-medium tracking-wider hover:bg-gray-100 transition">{t.hero.learnMore}</a>
         </div>
       </section>
 
       {/* About Section */}
       <section id="about" className="max-w-3xl mx-auto py-16 px-4">
-        <h2 className="font-serif text-xl md:text-2xl font-bold mb-4 uppercase tracking-widest border-b border-gray-200 pb-2">About the CRONOS Project</h2>
+        <h2 className="font-serif text-xl md:text-2xl font-bold mb-4 uppercase tracking-widest border-b border-gray-200 pb-2">{t.about.title}</h2>
         <p className="text-gray-800 mb-4">
-          The CRONOS Project aims to develop an advanced communication platform connecting diverse mobile entities and humans. Our research focuses on integrating V2V/V2X systems, Large Language Models, and VR simulation technologies to enable seamless, secure, and human-centered interactions in next-generation mobility environments.
+          {t.about.description}
         </p>
         <ul className="list-disc pl-6 text-gray-700 mb-4">
-          <li>Key objectives: Trustworthy, scalable, and intelligent communication frameworks</li>
-          <li>Research focus: V2V/V2X, LLMs, VR, Human-Embodied AI</li>
+          {t.about.objectives.map((objective, index) => (
+            <li key={index}>{objective}</li>
+          ))}
         </ul>
         <div className="flex flex-wrap gap-4 items-center mt-4">
           <span className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-xs font-semibold">JST Funded</span>
@@ -88,88 +228,22 @@ export default function Home() {
       <section id="objectives" className="bg-gradient-to-b from-gray-50 to-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 uppercase tracking-widest">Project Objectives</h2>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 uppercase tracking-widest">{t.objectives.title}</h2>
             <div className="w-24 h-1 bg-gray-900 mx-auto"></div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Objective 1 */}
-            <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white font-bold text-xl">1</div>
-                <div>
-                  <h3 className="font-serif text-lg font-bold mb-2 text-gray-900">Build an Interoperability Platform</h3>
-                  <p className="text-gray-700">Develop a robust platform for heterogeneous communication messages using foundational models</p>
+            {t.objectives.items.map((item, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white font-bold text-xl">{index + 1}</div>
+                  <div>
+                    <h3 className="font-serif text-lg font-bold mb-2 text-gray-900">{item.title}</h3>
+                    <p className="text-gray-700">{item.description}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            {/* Objective 2 */}
-            <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white font-bold text-xl">2</div>
-                <div>
-                  <h3 className="font-serif text-lg font-bold mb-2 text-gray-900">Optimize Bidirectional Interaction</h3>
-                  <p className="text-gray-700">Enhance the interaction between humans and Embodied AI for seamless communication</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Objective 3 */}
-            <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white font-bold text-xl">3</div>
-                <div>
-                  <h3 className="font-serif text-lg font-bold mb-2 text-gray-900">Develop Adaptive Platform</h3>
-                  <p className="text-gray-700">Create a communication platform that evolves to accommodate diverse needs and scenarios</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Objective 4 */}
-            <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white font-bold text-xl">4</div>
-                <div>
-                  <h3 className="font-serif text-lg font-bold mb-2 text-gray-900">Demonstrate Co-Creative System</h3>
-                  <p className="text-gray-700">Showcase a communication platform for human-Embodied AI co-creative transportation system</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Key Features */}
-          <div className="mt-12 bg-white rounded-lg shadow-lg p-8 border border-gray-100">
-            <h3 className="font-serif text-xl font-bold mb-6 text-center text-gray-900">Key Features</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Trustworthy</h4>
-                <p className="text-sm text-gray-700">Secure and reliable communication framework</p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                  </svg>
-                </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Scalable</h4>
-                <p className="text-sm text-gray-700">Adaptable to growing demands and complexity</p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
-                </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Intelligent</h4>
-                <p className="text-sm text-gray-700">Advanced AI-driven communication systems</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -254,21 +328,21 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <a href="https://coop-intelligence.github.io/" 
                      className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors" 
-                     target="_blank" 
+          target="_blank"
                      rel="noopener noreferrer">
                     <h5 className="font-semibold text-gray-900 mb-2">Challenge 1</h5>
                     <p className="text-sm text-gray-700">TUMTraf V2X Cooperative Perception Dataset (CVPR&apos;24)</p>
                   </a>
                   <a href="https://coop-intelligence.github.io/V2X-Sec_MEIS/#Perception-track" 
                      className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors" 
-                     target="_blank" 
+          target="_blank"
                      rel="noopener noreferrer">
                     <h5 className="font-semibold text-gray-900 mb-2">Challenge 2</h5>
                     <p className="text-sm text-gray-700">End-to-End Autonomous Driving through V2X Cooperation (Track1: Temporal Perception)</p>
                   </a>
                   <a href="https://coop-intelligence.github.io/V2X-Sec_MEIS/#E2E-track" 
                      className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors" 
-                     target="_blank" 
+          target="_blank"
                      rel="noopener noreferrer">
                     <h5 className="font-semibold text-gray-900 mb-2">Challenge 3</h5>
                     <p className="text-sm text-gray-700">End-to-End Autonomous Driving through V2X Cooperation (Track2: E2E-AD)</p>
@@ -315,16 +389,149 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Poster Highlights */}
-      <section id="posters" className="bg-gray-50 py-16 px-4 border-t border-b border-gray-200">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="font-serif text-xl md:text-2xl font-bold mb-4 uppercase tracking-widest border-b border-gray-200 pb-2">Poster Highlights</h2>
-          <ul className="list-disc pl-6 text-gray-700 mb-4">
-            <li>Keynote presentations by leading researchers</li>
-            <li>Panel discussions on future mobility and AI</li>
-            <li>Demonstration sessions of V2X/VR/LLM technologies</li>
-            <li>Networking opportunities for academia and industry</li>
-          </ul>
+      {/* Poster Gallery */}
+      <section id="posters" className="bg-gradient-to-b from-gray-50 to-white py-20 px-4 border-t border-b border-gray-200">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 uppercase tracking-widest">Research Posters</h2>
+            <div className="w-24 h-1 bg-gray-900 mx-auto"></div>
+            <p className="text-gray-700 mt-4 max-w-2xl mx-auto">Explore our latest research contributions and findings from the CRONOS project</p>
+          </div>
+          
+          {/* Poster Slider */}
+          <div className="relative">
+            <div className="overflow-hidden rounded-lg shadow-2xl">
+              <div className="flex transition-transform duration-500 ease-in-out" style={{transform: `translateX(-${0 * 100}%)`}}>
+                {/* Poster 1: PillarFusion */}
+                <div className="w-full flex-shrink-0">
+                  <div className="bg-white p-8 rounded-lg">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                      <div className="lg:col-span-2">
+                        <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg overflow-hidden shadow-lg">
+                          <div className="aspect-[4/3] relative">
+                            <Image 
+                              src="/posters/pillarfusion-poster.png" 
+                              alt="PillarFusion Poster" 
+                              fill 
+                              className="object-contain"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="lg:col-span-1">
+                        <div className="space-y-6">
+                          <div>
+                            <h3 className="font-serif text-xl font-bold mb-2 text-gray-900">PillarFusion</h3>
+                            <p className="text-sm text-gray-600 mb-4">Lightweight Feature-Level Collaborative Perception for Autonomous Driving</p>
+                          </div>
+                          <div className="space-y-4">
+                            <div className="bg-gray-50 rounded-lg p-4">
+                              <h4 className="font-semibold text-gray-900 mb-2">Key Contributions</h4>
+                              <ul className="text-sm text-gray-700 space-y-1">
+                                <li>• Novel pillar-level feature sharing approach</li>
+                                <li>• Reduced communication overhead by 96%</li>
+                                <li>• Maintained detection accuracy</li>
+                                <li>• Real-world deployment practicality</li>
+                              </ul>
+                            </div>
+                            <div className="bg-gray-50 rounded-lg p-4">
+                              <h4 className="font-semibold text-gray-900 mb-2">Research Impact</h4>
+                              <p className="text-sm text-gray-700">This work demonstrates the feasibility of lightweight collaborative perception systems for practical V2X deployment in autonomous driving scenarios.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Placeholder for additional posters */}
+                <div className="w-full flex-shrink-0">
+                  <div className="bg-white p-8 rounded-lg">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                      <div className="lg:col-span-2">
+                        <div className="bg-gradient-to-br from-green-600 to-green-800 rounded-lg overflow-hidden shadow-lg">
+                          <div className="aspect-[4/3] relative flex items-center justify-center text-white">
+                            <div className="text-center p-8">
+                              <h3 className="text-2xl md:text-3xl font-bold mb-4">Future Research Poster</h3>
+                              <p className="text-lg opacity-90">Coming Soon</p>
+                              <p className="text-sm mt-4 opacity-75">Additional research posters will be showcased here as they become available</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="lg:col-span-1">
+                        <div className="space-y-6">
+                          <div>
+                            <h3 className="font-serif text-xl font-bold mb-2 text-gray-900">Upcoming Research</h3>
+                            <p className="text-sm text-gray-600 mb-4">More exciting research results from the CRONOS project</p>
+                          </div>
+                          <div className="bg-gray-50 rounded-lg p-4">
+                            <h4 className="font-semibold text-gray-900 mb-2">Research Areas</h4>
+                            <ul className="text-sm text-gray-700 space-y-1">
+                              <li>• V2X Communication Systems</li>
+                              <li>• LLM Integration</li>
+                              <li>• VR Simulation Technologies</li>
+                              <li>• Human-AI Interaction</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Navigation dots */}
+            <div className="flex justify-center mt-8 gap-2">
+              <button className="w-3 h-3 rounded-full bg-gray-900 transition-colors"></button>
+              <button className="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors"></button>
+            </div>
+          </div>
+          
+          {/* Poster Session Info */}
+          <div className="mt-16 bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+            <h3 className="font-serif text-xl font-bold mb-6 text-center text-gray-900">Poster Session Information</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="text-center">
+                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-2">Research Presentations</h4>
+                <p className="text-sm text-gray-700">Latest findings and methodologies</p>
+              </div>
+              <div className="text-center">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-2">Interactive Sessions</h4>
+                <p className="text-sm text-gray-700">Direct interaction with researchers</p>
+              </div>
+              <div className="text-center">
+                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-2">Live Demonstrations</h4>
+                <p className="text-sm text-gray-700">V2X and VR technology showcases</p>
+              </div>
+              <div className="text-center">
+                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6" />
+                  </svg>
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-2">Networking</h4>
+                <p className="text-sm text-gray-700">Connect with academia and industry</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
